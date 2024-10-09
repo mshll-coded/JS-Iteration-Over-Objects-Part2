@@ -60,11 +60,11 @@ Don't forget to uncomment the console.log
 ===
 ANSWER: Alice
 **********/
-
+// Meshal
 function getStudentName(student) {
-  // Your code here
+  return student.name;
 }
-// console.log(getStudentName(students[0]))
+// console.log(getStudentName(students[0]));
 
 /**********
   Question 2:
@@ -75,10 +75,11 @@ function getStudentName(student) {
 	===
 	ANSWER: Music
   **********/
-
+// Yousef
 function getCourse(student, courseIndex) {
-  // Your code here
+  return student.courses[courseIndex];
 }
+
 // console.log(getCourse(students[4], 2));
 
 /**********
@@ -96,12 +97,13 @@ function getCourse(student, courseIndex) {
 	  courses: [ 'History', 'Art', 'PE', 'Physics' ]
 	}
 	**********/
-
+// M
 function addCourseToStudent(student, course) {
-  // Your code here
+  student.courses.push(course);
+  return student;
 }
 
-// console.log(addCourseToStudent(students[7], "Physics"));
+// console.log(addCourseToStudent(students[7], 'Physics'));
 
 /**********
   Question 4:
@@ -111,9 +113,11 @@ function addCourseToStudent(student, course) {
 	===
 	ANSWER: 4
   **********/
+// Y
 function countCourses(student) {
-  // Your code here
+  return student.courses.length;
 }
+
 // console.log(countCourses(students[1]));
 
 /**********
@@ -130,9 +134,13 @@ function countCourses(student) {
 	  'PE'
 	]
   **********/
+// M
 function listAllCourses(students) {
-  // Your code here
+  const allCourses = [];
+  students.forEach((student) => student.courses.forEach((course) => allCourses.includes(course) || allCourses.push(course)));
+  return allCourses;
 }
+
 // console.log(listAllCourses(students));
 
 /**********
@@ -147,10 +155,14 @@ function listAllCourses(students) {
   { id: 7, name: 'Grace', courses: [ 'Math', 'English', 'Music' ] }
   **********/
 
+// Y
 function removeCourseFromStudent(student, course) {
-  // Your code here
+  const courseIndex = student.courses.indexOf(course);
+  student.courses.splice(courseIndex, 1);
+  return student;
 }
-// console.log(removeCourseFromStudent(students[6],"Science"));
+
+// console.log(removeCourseFromStudent(students[6], 'Science'));
 
 /**********
   Question 7:
@@ -162,11 +174,12 @@ function removeCourseFromStudent(student, course) {
   ANSWER: { id: 10, name: 'Jack', courses: [ 'Math', 'History', 'Music' ] }
   **********/
 
+// Y
 function findStudentById(studentId, students) {
-  // Your code here
+  return students.filter((student) => student.id === studentId)[0];
 }
 
-// console.log(findStudentById(10,students));
+// console.log(findStudentById(10, students));
 
 /**********
   Question 8: 🌶️🌶️🌶️
@@ -193,7 +206,7 @@ function findStudentById(studentId, students) {
   **********/
 
 function getStudentsByCourse(course, students) {
-  // Your code here
+  return students.filter((student) => student.courses.includes(course));
 }
 
-// console.log(getStudentsByCourse("Music",students));
+// console.log(getStudentsByCourse('Music', students));
